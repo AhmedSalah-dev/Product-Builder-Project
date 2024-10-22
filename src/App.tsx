@@ -2,7 +2,8 @@
 import ProductCard from "./compnents/ProductCard"
 import Model from "./compnents/ui/Model"
 import Button from "./compnents/ui/Button"
-import { productList } from "./data"
+import Input from "./compnents/ui/input" 
+import { formInputsList, productList } from "./data"
 import { useState } from "react"
 
 const App = () => {
@@ -21,6 +22,13 @@ const App = () => {
 
   /******Render******/
   const renderProductList = productList.map(product => <ProductCard key={product.id} product={product} />)
+  const renderFormInputList = formInputsList.map(input => 
+    <div className="flex flex-col">
+      <label htmlFor={input.id} className="mb-[2px] text-sm font-medium text-gray-700">{input.label}</label>
+      <Input type="text" id={input.id} name={input.name}   />
+    </div>
+  )
+  
   /*
 
 
@@ -37,10 +45,13 @@ const App = () => {
       </div>
 
       <Model openModel={isOpen} close={close} title="ADD A NEW PRODUCT" >
-        <div className="flex items-center space-x-3">
-        <Button  className="bg-indigo-700 hover:bg-indigo-800">Submit</Button>
-        <Button className="bg-gray-300 hover:bg-gray-400">Cancel</Button>
-        </div>
+       <form className="space-y-3"> 
+          {renderFormInputList}
+          <div className="flex items-center space-x-3">
+            <Button  className="bg-indigo-700 hover:bg-indigo-800">Submit</Button>
+            <Button className="bg-gray-400 hover:bg-gray-500">Cancel</Button>
+          </div>
+        </form>
       </Model>
 
     </main>

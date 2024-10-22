@@ -1,5 +1,3 @@
-
-
 export interface IProduct {
   id?: string;
   title: string;
@@ -11,5 +9,12 @@ export interface IProduct {
     name: string;
     imageURL: string;
   };
+}
+
+export interface IFormInput {
+  id: string;
+  name: string;
+  label:string;
+  type: string;
 }
 
