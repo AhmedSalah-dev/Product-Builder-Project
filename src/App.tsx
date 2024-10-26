@@ -45,7 +45,7 @@ const App = () => {
       <label htmlFor={input.id} className="mb-[2px] text-sm font-medium text-gray-700">
          {input.label}
      </label>
-      <Input type="text" id={input.id} name={input.name} value={product['']} onChange={oncChangeHandler}  />
+      <Input type="text" id={input.id} name={input.name} value={product[input.name]} onChange={oncChangeHandler}  />
     </div>
   )
   
