@@ -1,6 +1,7 @@
 import { v4 as uuid } from "uuid";
 import { IProduct, IFormInput } from "../interfaces";
 
+
 export const productList: IProduct[] = [
   {
     id: uuid(),
@@ -172,4 +173,18 @@ export const formInputsList: IFormInput[] = [
     type: "text",
   },
 ];
+
+export const colors:string[] =[
+  "#a855f7",
+  "#2563eb",
+  "#84D2C5",
+  "#13005A",
+  "#A31ACB",
+  "#FF6E31",
+  "#3C2A21",
+  "#6C4AB6",
+  "#CB1C8D",
+  "#000000",
+  "#645CBB",
+]
 
